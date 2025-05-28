@@ -7,3 +7,9 @@ inputs.forEach(function (input) {
     console.log(input);
 });
 // i can do tsc sandbox.ts -w , so everytime i make a change it will recompile but i will do it manually for a bit
+// this can take any type because its not specified
+var circ = function (diameter) {
+    return diameter * Math.PI;
+};
+console.log(circ(2));
+// to specify the type just add :number or :string or :boolean
