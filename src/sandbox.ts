@@ -9,7 +9,7 @@ console.log(inputs);
 inputs.forEach((input) => {
   console.log(input);
 });
-// i can do tsc sandbox.ts -w , so everytime i make a change it will recompile but i will do it manually for a bit
+// i can do tsc sandbox.ts -w , or tsc -wso everytime i make a change it will recompile but i will do it manually for a bit
 
 //Part 2
 // this can take any type because its not specified
@@ -125,3 +125,11 @@ console.log(dynamicNinja);
 
 dynamicNinja = { name: "burger", age: 2 };
 console.log(dynamicNinja);
+
+// Part 7 Better Workflow & tsconfig
+console.log("testing");
+// add this to bottom of tsconfig.json "include": ["src"]
+// uncomment and add "outDir": "./public" and "rootDir": "./src"
+// basically saying that I want any ts file in src to be converted to js in the public file for the browser.
+// to get tsconfig.json do tsc --init. do tsc -w to not have to save
+// src is for ts and public is for js
