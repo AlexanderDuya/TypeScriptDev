@@ -29,6 +29,7 @@ var mixed = ["alex", 3, "hello"];
 mixed.push("red");
 mixed.push(3);
 mixed[1] = "bro";
+//Part 4
 //creating an object
 var ninja = {
     name: "mario",
@@ -45,3 +46,37 @@ ninja = {
     belt: "orange",
     age: 40, //if i comment out age it will not work
 };
+//Part 5 explicit types
+var character; // only allowing string
+var age;
+var isLoggedIn;
+// age ='luigi'  cannot apply string because its a number
+age = 30;
+isLoggedIn = true;
+//arrays
+var ninjas = []; // can only be array of strings
+// must need =[] in order to push something into the array
+ninjas = ["yoshi", "mario"];
+ninjas.push("bad");
+console.log(ninjas);
+//union types
+//could be 1 or 3 types
+var mixedArray = []; // can now store string or numbers
+mixedArray.push("hello", 0);
+// mixedArray.push(true); wont work unles string | number | boolean
+console.log(mixedArray);
+var uid; // can be either does nt need parenthesis
+uid = "yes";
+uid = 3;
+//objects
+var ninjaOne;
+ninjaOne = {
+    name: "yoshi",
+    age: 30,
+};
+ninjaOne = []; // this would work because array is type of object.
+var ninjaTwo;
+// now we created an object but it must have these properties and explicit types.
+// assigning
+ninjaTwo = { name: "alex", age: 30, beltColour: "red" };
+// cannt add on any extra properties

@@ -37,6 +37,7 @@ mixed.push("red");
 mixed.push(3);
 mixed[1] = "bro";
 
+//Part 4
 //creating an object
 let ninja = {
   name: "mario",
@@ -56,3 +57,49 @@ ninja = {
   belt: "orange",
   age: 40, //if i comment out age it will not work
 };
+
+//Part 5 explicit types
+let character: string; // only allowing string
+let age: number;
+let isLoggedIn: boolean;
+
+// age ='luigi'  cannot apply string because its a number
+age = 30;
+isLoggedIn = true;
+
+//arrays
+let ninjas: string[] = []; // can only be array of strings
+// must need =[] in order to push something into the array
+ninjas = ["yoshi", "mario"];
+ninjas.push("bad");
+console.log(ninjas);
+
+//union types
+//could be 1 or 3 types
+let mixedArray: (string | number)[] = []; // can now store string or numbers
+mixedArray.push("hello", 0);
+// mixedArray.push(true); wont work unles string | number | boolean
+console.log(mixedArray);
+
+let uid: string | number; // can be either does nt need parenthesis
+uid = "yes";
+uid = 3;
+
+//objects
+let ninjaOne: object;
+
+ninjaOne = {
+  name: "yoshi",
+  age: 30,
+};
+ninjaOne = []; // this would work because array is type of object.
+
+let ninjaTwo: {
+  name: string;
+  age: number;
+  beltColour: string;
+};
+// now we created an object but it must have these properties and explicit types.
+// assigning
+ninjaTwo = { name: "alex", age: 30, beltColour: "red" };
+// cannt add on any extra properties
