@@ -80,3 +80,20 @@ var ninjaTwo;
 // assigning
 ninjaTwo = { name: "alex", age: 30, beltColour: "red" };
 // cannt add on any extra properties
+//Part 6 Dynamic (any) Types
+var ageDynamic = 25;
+ageDynamic = true;
+ageDynamic = "hello";
+ageDynamic = { name: "luigi" };
+ageDynamic = [];
+var mixedDynamic = [];
+mixedDynamic.push(5);
+mixedDynamic.push("yo");
+mixedDynamic.push(false);
+console.log(mixedDynamic);
+// when declaring object type use :
+var dynamicNinja;
+dynamicNinja = { name: "yoshi", age: 22 };
+console.log(dynamicNinja);
+dynamicNinja = { name: "burger", age: 2 };
+console.log(dynamicNinja);
