@@ -168,3 +168,28 @@ let result = minus(10, 7);
 // result wil be the type of what has been returned in the function
 // to explicity declare the type add a colon like normal. but we dont have to do it but it might be good
 // good for other developers
+
+//Part 9
+const logDetails = (uid: string | number, item: string) => {
+  console.log(`${item} has a uid of ${uid}`);
+};
+
+const greeting = (user: { name: string; uid: string | number }) => {
+  console.log(`${user.name} says hello`);
+};
+
+// we can avoid repeating string | number by introducing Type Aliases
+type StringOrNum = string | number;
+// then replace like this
+
+const greetingModified = (user: { name: string; uid: StringOrNum }) => {
+  console.log(`${user.name} says hello`);
+};
+// but we can also get rid of the object and shorten it by declaring it beforehand
+type objWithName = { name: string; uid: StringOrNum };
+
+const greetingModifiedAgain = (user: objWithName) => {
+  console.log(`${user.name} says hello`);
+};
+// notice how we swapped it with objWithName instead of putting the user properties inside of user
+// this is useful for future coding practices because we can reuse it and save code lines
