@@ -193,3 +193,38 @@ const greetingModifiedAgain = (user: objWithName) => {
 };
 // notice how we swapped it with objWithName instead of putting the user properties inside of user
 // this is useful for future coding practices because we can reuse it and save code lines
+
+//Part 10
+//example1
+let gree: (a: string, b: string) => void;
+
+// this follows the signature above 2 parameters and its void
+gree = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`);
+};
+
+//example 2
+let calc: (a: number, b: number, c: string) => number;
+// it takes 3 parameters must be this type and return a number
+// you must cover all cases to return something
+calc = (numOne: number, numTwo: number, action: string) => {
+  if (action === " add") {
+    return numOne + numTwo;
+  } else {
+    return numOne - numTwo;
+  }
+};
+
+// example 3
+let logDetail: (obj: { name: string; age: number }) => void;
+logDetail = (user: { name: string; age: number }) => {
+  console.log(`The users details are ${user.name} and ${user.age}`);
+};
+// it is infered that is void so dont need to do :void etc
+
+// what can also work which i thought is using types with signatures
+// this makes it much cleaner to understand.
+type person = { name: string; age: number };
+logDetail = (user: person) => {
+  console.log(`The users details are ${user.name} and ${user.age}`);
+};
