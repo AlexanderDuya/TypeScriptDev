@@ -38,4 +38,27 @@ const invTwo = new Invoice("Jeff", "work on the app", 350);
 let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-console.log(invoices);
+//console.log(invoices);
+invoices.forEach((inv) => {
+    console.log(inv.client, inv.amount, inv.format());
+});
+//since the attributes are public we can manually change them outside the class
+//invOne.client = "yoshi";
+//invTwo.client = "luigi";
+//we can use access modifiers to prevent this eg public amount : number;
+//if its private we cannot access it outside the class only within the class
+//we can still access it through methods within the class example the format()
+//readonly means we can only read it but we cannot change it in or outside the class. we can console etc
+//if we want to assing properties straight away we can do this
+/*
+constroctor(
+readonly client: string,
+private details: string,
+public amount: number,){}
+
+so we wont need:
+readonly client: string;
+and we wont need to do this.client = c;
+
+its essentially a 2 in 1!
+*/
