@@ -1,4 +1,4 @@
-"use strict";
+import { Invoice } from "./classes/invoice";
 //Part 11
 const anchor = document.querySelector("a");
 console.log(anchor.href);
@@ -19,17 +19,6 @@ form.addEventListener("submit", (e) => {
     console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
 // valueasnumber turns it into an actual number in the console its blue or purple
-//basic invoice class to make object
-class Invoice {
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
-    }
-    format() {
-        return `${this.client} owes £${this.amount} for ${this.details}`;
-    }
-}
 // Instantiate
 const invOne = new Invoice("mario", "work on the website", 250);
 const invTwo = new Invoice("Jeff", "work on the app", 350);
@@ -62,3 +51,4 @@ and we wont need to do this.client = c;
 
 its essentially a 2 in 1!
 */
+//Module system only works with modern browsers. Issue is that it makes unecessary request but this can be solved with webpack
