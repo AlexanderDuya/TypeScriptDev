@@ -22,3 +22,36 @@ form.addEventListener("submit", (e: Event) => {
   console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
 // valueasnumber turns it into an actual number in the console its blue or purple
+
+//basic invoice class to make object
+class Invoice {
+  client: string;
+  details: string;
+  amount: number;
+
+  constructor(c: string, d: string, a: number) {
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+  }
+
+  format() {
+    return `${this.client} owes £${this.amount} for ${this.details}`;
+  }
+}
+
+// Instantiate
+const invOne = new Invoice("mario", "work on the website", 250);
+const invTwo = new Invoice("Jeff", "work on the app", 350);
+
+//console.log(invOne, invTwo);
+//i could say the array can only hold Invoice objects from the class
+let invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
+
+//since the attributes are public we can manually change them outside the class
+invOne.client = "yoshi";
+invTwo.client = "luigi";
+// we can use access modifiers to prevent this

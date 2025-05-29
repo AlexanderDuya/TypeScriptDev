@@ -18,3 +18,24 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
+// valueasnumber turns it into an actual number in the console its blue or purple
+//basic invoice class to make object
+class Invoice {
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    format() {
+        return `${this.client} owes £${this.amount} for ${this.details}`;
+    }
+}
+// Instantiate
+const invOne = new Invoice("mario", "work on the website", 250);
+const invTwo = new Invoice("Jeff", "work on the app", 350);
+//console.log(invOne, invTwo);
+//i could say the array can only hold Invoice objects from the class
+let invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
