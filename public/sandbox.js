@@ -134,3 +134,46 @@ let result = minus(10, 7);
 // result wil be the type of what has been returned in the function
 // to explicity declare the type add a colon like normal. but we dont have to do it but it might be good
 // good for other developers
+//Part 9
+const logDetails = (uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
+};
+const greeting = (user) => {
+    console.log(`${user.name} says hello`);
+};
+// then replace like this
+const greetingModified = (user) => {
+    console.log(`${user.name} says hello`);
+};
+const greetingModifiedAgain = (user) => {
+    console.log(`${user.name} says hello`);
+};
+// notice how we swapped it with objWithName instead of putting the user properties inside of user
+// this is useful for future coding practices because we can reuse it and save code lines
+//Part 10
+//example1
+let gree;
+// this follows the signature above 2 parameters and its void
+gree = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
+};
+//example 2
+let calc;
+// it takes 3 parameters must be this type and return a number
+// you must cover all cases to return something
+calc = (numOne, numTwo, action) => {
+    if (action === " add") {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
+};
+// example 3
+let logDetail;
+logDetail = (user) => {
+    console.log(`The users details are ${user.name} and ${user.age}`);
+};
+logDetail = (user) => {
+    console.log(`The users details are ${user.name} and ${user.age}`);
+};
