@@ -1,3 +1,20 @@
+//eg:
+const alex = {
+    name: "alex",
+    age: 20,
+    speak(text) {
+        console.log(text);
+    },
+    spend(number) {
+        console.log("I spent", number);
+        return number;
+    },
+};
+console.log(alex);
+const greetPerson = (person) => {
+    console.log("hello", person.name);
+};
+greetPerson(alex);
 import { Invoice } from "./classes/invoice";
 //Part 11
 const anchor = document.querySelector("a");

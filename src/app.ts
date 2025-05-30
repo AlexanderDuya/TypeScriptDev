@@ -1,3 +1,32 @@
+// interfaces
+//we enforce structure onto objects and classes
+//if we have a variable in the future of isPerson then it must have these properties no constructor
+interface isPerson {
+  // what properties an isPerson object has
+  name: string;
+  age: number;
+  speak(a: string): void;
+  spend(a: number): number;
+}
+//eg:
+
+const alex: isPerson = {
+  name: "alex",
+  age: 20,
+  speak(text: string): void {
+    console.log(text);
+  },
+  spend(number: number): number {
+    console.log("I spent", number);
+    return number;
+  },
+};
+console.log(alex);
+const greetPerson = (person: isPerson) => {
+  console.log("hello", person.name);
+};
+greetPerson(alex);
+
 import { Invoice } from "./classes/invoice";
 //Part 11
 const anchor = document.querySelector("a")!;
