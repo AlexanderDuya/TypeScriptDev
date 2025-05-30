@@ -1,5 +1,6 @@
+import { HasFormatter } from "../interfaces/HasFormatter.js";
 //basic invoice class to make objecs
-export class Invoice {
+export class Invoice implements HasFormatter {
   readonly client: string;
   private details: string;
   amount: number;

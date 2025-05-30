@@ -27,7 +27,20 @@ const greetPerson = (person: isPerson) => {
 };
 greetPerson(alex);
 
-import { Invoice } from "./classes/invoice";
+import { Invoice } from "./classes/invoice.js";
+import { Payment } from "./classes/payment.js";
+import { HasFormatter } from "./interfaces/HasFormatter.js";
+
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
+
+docOne = new Invoice("yoshi", "webwork", 250);
+docTwo = new Payment("mario", "plumbing work", 200);
+
+let docs: HasFormatter[] = [];
+docs.push(docOne);
+docs.push(docTwo);
+
 //Part 11
 const anchor = document.querySelector("a")!;
 console.log(anchor.href);
@@ -49,7 +62,14 @@ const amount = document.querySelector("#amount") as HTMLInputElement;
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
-  console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+  let doc: HasFormatter;
+
+  if (type.value === "invoice") {
+    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+  } else {
+    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+  }
+  console.log(doc);
 });
 // valueasnumber turns it into an actual number in the console its blue or purple
 
