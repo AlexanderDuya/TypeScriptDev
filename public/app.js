@@ -89,3 +89,33 @@ and we wont need to do this.client = c;
 its essentially a 2 in 1!
 */
 //Module system only works with modern browsers. Issue is that it makes unecessary request but this can be solved with webpack
+//GENEREICS
+/*
+Generics allow us to create reusable blocks of code that can be used with different types
+
+*/
+const addUID = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne1 = addUID({ name: "yoshi", age: 40 });
+console.log(docOne1.name);
+const docThree = {
+    uid: 1,
+    resourceName: "person",
+    data: { name: "shaun" }, // what if this was a string or number or anything it would be an error
+};
+const docThreeModified = {
+    uid: 1,
+    resourceName: "person",
+    data: "shaun",
+};
+// basically we created the object and passed in that we want wherever T to be is a string. so data can now be a string whenever we need it to be
+//but if i wanted it to be an object then just swap it to object and pass in an object
+const docFour = {
+    uid: 2,
+    resourceName: "shopping list",
+    data: ["banana", "coconut"],
+};
+console.log(docThreeModified, docFour);
+console.log(docFour.data);

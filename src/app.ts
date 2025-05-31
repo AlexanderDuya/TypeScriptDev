@@ -116,3 +116,60 @@ and we wont need to do this.client = c;
 its essentially a 2 in 1!
 */
 //Module system only works with modern browsers. Issue is that it makes unecessary request but this can be solved with webpack
+
+//GENEREICS
+/*
+Generics allow us to create reusable blocks of code that can be used with different types
+
+*/
+
+const addUID = <T extends object>(obj: T) => {
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+};
+
+let docOne1 = addUID({ name: "yoshi", age: 40 });
+
+console.log(docOne1.name);
+//By putting <T> it captures whatever properties are in the object. now it will know its properties and now you can do docOne1.name
+//But we need to specify its an object by saying it extends object. So now It can only be an object
+//let docOne2 = addUID({'hello}) would not work
+//we could even do extends {name: string}, only allowing this that have a name string property
+
+//Can also be used with interfaces
+//Interface defines how an object should look, what properties it must have
+interface Resource {
+  uid: number;
+  resourceName: string;
+  data: object;
+}
+
+const docThree: Resource = {
+  uid: 1,
+  resourceName: "person",
+  data: { name: "shaun" }, // what if this was a string or number or anything it would be an error
+};
+//instead we pass in the type by putting in <T> after Resource and data becomes : T
+
+interface ResourceModified<T> {
+  uid: number;
+  resourceName: string;
+  data: T;
+}
+
+const docThreeModified: ResourceModified<string> = {
+  uid: 1,
+  resourceName: "person",
+  data: "shaun",
+};
+// basically we created the object and passed in that we want wherever T to be is a string. so data can now be a string whenever we need it to be
+//but if i wanted it to be an object then just swap it to object and pass in an object
+
+const docFour: ResourceModified<string[]> = {
+  uid: 2,
+  resourceName: "shopping list",
+  data: ["banana", "coconut"],
+};
+
+console.log(docThreeModified, docFour);
+console.log(docFour.data);
