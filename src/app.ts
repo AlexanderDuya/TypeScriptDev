@@ -173,3 +173,38 @@ const docFour: ResourceModified<string[]> = {
 
 console.log(docThreeModified, docFour);
 console.log(docFour.data);
+
+//ENUMS
+/*
+Set of constants or keywords and associate them witha numeric value
+Way to specify for example what 3 is it could be a book whilst 4 could be a manga
+
+*/
+
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+}
+
+interface ResourceEnum<T> {
+  uid: number;
+  resourceType: ResourceType; // so now instead of saying its a number its a resourcetype then access attribute
+  data: T;
+}
+
+const docOneEnum: ResourceEnum<object> = {
+  uid: 1,
+  resourceType: ResourceType.DIRECTOR, // SEE we dont use number anymore we can do this
+  data: { title: "name of the wind" },
+};
+
+const docTwoEnum: ResourceEnum<object> = {
+  uid: 10,
+  resourceType: ResourceType.PERSON,
+  data: { name: "yoshi" },
+};
+
+console.log(docOneEnum, docTwoEnum);

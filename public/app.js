@@ -119,3 +119,28 @@ const docFour = {
 };
 console.log(docThreeModified, docFour);
 console.log(docFour.data);
+//ENUMS
+/*
+Set of constants or keywords and associate them witha numeric value
+Way to specify for example what 3 is it could be a book whilst 4 could be a manga
+
+*/
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+const docOneEnum = {
+    uid: 1,
+    resourceType: ResourceType.DIRECTOR, // SEE we dont use number anymore we can do this
+    data: { title: "name of the wind" },
+};
+const docTwoEnum = {
+    uid: 10,
+    resourceType: ResourceType.PERSON,
+    data: { name: "yoshi" },
+};
+console.log(docOneEnum, docTwoEnum);
